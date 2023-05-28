@@ -1,0 +1,1 @@
+export const RESIZE_QUEUE: string = 'resize';

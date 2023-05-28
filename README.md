@@ -29,6 +29,10 @@ For the backend I decided to use Nestjs. it is a great choice for building scala
 
 I decided to use Bull for queueing because it's a simple and easy to use library that allows us to use Redis as a queueing system. It has a simple API and it's easy to integrate with Nestjs.
 
+**Why K8S?**
+
+I decided to use K8S because it's a great tool for deploying and managing containerized applications. It allows us to easily scale our application and it's easy to integrate with CI/CD tools like Jenkins or Gitlab CI. It also allows us to easily monitor our application and set up alerts. The usage of multiple replicas and redis as a queueing system allows us to easily scale our application horizontally in case we need to handle more requests.
+
 ## Requirements
 
 - Node.js

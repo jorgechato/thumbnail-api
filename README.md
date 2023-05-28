@@ -89,6 +89,9 @@ $ kubectl get services
 
 ## Test
 
+Currently the only unittests are for the controller. I didn't have time to write any for the service. Ideally we would have unit tests for the service and integration tests for the controller.
+The current tests are just to show how to write unit tests for the controller. Mocking the service and the queue.
+
 ```bash
 # unit tests
 $ npm run test

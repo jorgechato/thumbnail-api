@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: thumbnail-api
+  name: thumbnail-api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: thumbnail-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: thumbnail-api
+    spec:
+      containers:
+      - image: thumbnail-api_api:latest
+        imagePullPolicy: Never
+        name: thumbnail-api-api-t6tqk
+        ports:
+        - containerPort: 3000
+        resources: {}
+        env:
+        - name: REDIS_HOST
+          value: thumbnail-api-redis-master
+        - name: REDIS_PORT
+          value: "6379"
+status: {}
